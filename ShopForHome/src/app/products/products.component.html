@@ -1,0 +1,103 @@
+<!-- Displaying the All the products -->
+<div class="card-top container-fluid">
+    <div class="container d-flex">
+
+        <div class="item">
+            <a (click)="filter('')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="https://images.pexels.com/photos/2536965/pexels-photo-2536965.jpeg?cs=srgb&dl=pexels-suzy-hazelwood-2536965.jpg&fm=jpg" alt="">
+                <h6>All Products</h6>
+            </a>
+        </div>
+
+        <!-- Displaying the home icon -->
+        <div class="item">
+            <a (click)="filter('Furniture')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="https://media.istockphoto.com/photos/eclectic-living-room-interior-with-comfortable-velvet-corner-sofa-picture-id1190440285?k=20&m=1190440285&s=612x612&w=0&h=8e8k0hwB200m1hztqq2ddEQTK9ftGcnLWCbktefeSRI="
+                    alt="">
+                <h6>Furniture </h6>
+            </a>
+        </div>
+        <!-- Displaying the grocery Icon -->
+        <div class="item">
+            <a (click)="filter('Grocery')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="https://5.imimg.com/data5/SELLER/Default/2021/2/BF/YL/GY/54285427/all-grocery-items-500x500.png"
+                    alt="">
+                <h6> Grocery </h6>
+            </a>
+        </div>
+        <!-- Displaying the Mobile Icon -->
+        <div class="item">
+            <a (click)="filter('Mobiles')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="https://2bmxxv2yj0s82ye6f82wewg5-wpengine.netdna-ssl.com/wp-content/uploads/elementor/thumbs/products_family_new_w_tracker_2-oxlw9tqhcasen0h1w35nwsee3ztfyv9kf4nmccmvme.png"
+                    alt="">
+                <h6>Mobiles </h6>
+            </a>
+        </div>
+        <!-- Displaying the Fashion Icon -->
+        <div class="item">
+            <a (click)="filter('Mens Wear')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="https://m.economictimes.com/thumb/msid-66009798,width-1200,height-900,resizemode-4,imgsize-621307/dress.jpg"
+                    alt="">
+                <h6> Mens Wear </h6>
+            </a>
+        </div>
+        <!-- Displaying the Beauty Icon -->
+        <div class="item">
+            <a (click)="filter('Womens Wear')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="https://www.infinitimall.com/wp-content/uploads/2022/01/Womens-wear-infiniti-mall-1024x768.jpg"
+                    alt="">
+                <h6> Womens Wear </h6>
+            </a>
+        </div>
+        <!-- Displaying the Appliances Icon -->
+        <div class="item">
+            <a (click)="filter('Appliances')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="https://timesofindia.indiatimes.com/thumb/msid-88588530,imgsize-33054,width-400,resizemode-4/88588530.jpg"
+                    alt="">
+                <h6> Appliances </h6>
+            </a>
+        </div>
+
+        <!-- Displaying the Sports Icon -->
+        <div class="item">
+            <a (click)="filter('Sports')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="https://media.istockphoto.com/photos/sports-equipment-on-floor-picture-id1136317339?k=20&m=1136317339&s=612x612&w=0&h=MSqnGrfVcmNhTpwuqSXFINWQOdMWo9YsQRIJ54teXQY="
+                    alt="">
+                <h6> Sports </h6>
+            </a>
+        </div>
+        <!-- Displaying the Electronics Icon -->
+        <div class="item">
+            <a (click)="filter('Beauty')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="https://image.shutterstock.com/image-photo/natural-cosmetic-cream-serum-skincare-260nw-1029009367.jpg" alt="">
+                <h6> Beauty </h6>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <ng-container *ngFor="let product of filterCategory | filter:searchKey:'pname'">
+                <div class="card col-md-3">
+                    <img class="card-img-top" src='../../assets/{{product.url}}'>
+                    <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
+                        {{product.pname}}</h5>
+                    <p><strong>Price:</strong>{{product.price}}</p>
+                    <button class="btn btn-primary" (click)="addtocart(product)">Add to Cart</button>
+                </div>
+            </ng-container>
+            <div>
+                <img src="https://ii3.pepperfry.com/media/wysiwyg/banners/HB_02_070722_fm.jpg" style="width:100%;">
+            </div>
+        </div>
+    </div>
+</div>
